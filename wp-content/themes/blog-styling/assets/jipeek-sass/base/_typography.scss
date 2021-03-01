@@ -60,6 +60,10 @@ p {
     }
 }
 
+li {
+    list-style-type: none;
+}
+
 // Styles
 .-uppercase {
     text-transform: uppercase;
@@ -111,4 +115,24 @@ p {
 // Line-clamp
 .-lineClampTitle {
     @include lineClamp(2);
+}
+
+
+// Toggle
+.-toggleItem {
+    transition: 0.4s;
+    display: inline-block;
+    height: 33px;
+    border-radius: $spaceRg;
+    border: solid 1px $color-darkgrey;
+    padding: 0px $spaceSm;
+    line-height: 1.8;
+    margin-right: $spaceXs;
+    margin-bottom: $spaceXs;
+
+    &:hover {
+        color: $color-lightin;
+        border-color: $color-secondary;
+        background-color: $color-secondary;
+    }
 }

@@ -47,6 +47,10 @@ button {
     letter-spacing: inherit;
     background: none;
     cursor: pointer;
+
+    &:focus {
+        outline: none;
+    }
 }
 
 blockquote {

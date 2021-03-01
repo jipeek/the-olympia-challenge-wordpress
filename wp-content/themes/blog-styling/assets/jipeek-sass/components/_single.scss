@@ -177,3 +177,55 @@
 .m-bottomArticle {
     margin-bottom: $spaceMega;
 }
+
+.m-page {
+    margin-top: $spaceSuperXl;
+    .-container {
+        max-width: 700px;
+    }
+
+    .m-single__img {
+        margin-bottom: 0;
+    }
+
+    @include mediaQueriesMinMd {
+        .m-single__img {
+            height: 360px;
+        }
+    }
+}
+
+.m-page__card {
+    background: $color-lightgrey;
+    border-radius: $spaceSm;
+
+
+    @include mediaQueriesMinMd {
+        padding: 32px;
+        margin-left: 32px;
+        margin-top: -64px;
+        margin-bottom: 32px;
+        width: 73%;
+    }
+
+    @include mediaQueriesMinLg {
+        width: 65%;
+    }
+
+    @include mediaQueriesMinXl {
+        margin: -64px auto 0 0;
+    }
+}
+
+.m-page__title {
+    @extend .m-single__title;
+    @include weight(6);
+    max-width: 480px;
+    margin-top: $spaceMd;
+
+    @include mediaQueriesMinMd {
+        margin-top: 0;
+        margin-bottom: 0;
+        font-size: $fontBg;
+    }
+}

@@ -500,6 +500,9 @@ button {
   background: none;
   cursor: pointer;
 }
+button:focus {
+  outline: none;
+}
 
 blockquote {
   margin: 0;
@@ -694,7 +697,7 @@ section {
   width: 100%;
   height: 100%;
   z-index: 2;
-  background-image: linear-gradient(to bottom, rgba(70, 69, 71, 0.4), rgba(70, 69, 71, 0.32) 20%, rgba(243, 245, 250, 0));
+  background: rgba(1, 1, 1, 0.4);
 }
 
 h1, h2, h3, h4, h5, h6, p, small, i, label, span, ol, li, ul, a, input, label, .-h1, .-h2, .-h3 {
@@ -763,6 +766,10 @@ p {
   p {
     font-size: 16px;
   }
+}
+
+li {
+  list-style-type: none;
 }
 
 .-uppercase, .m-single__cat, .m-biggerArticle__cat, .m-smallArticle p, .m-bigArticle__cat, .m-popularItem__cat, .m-categoryList ul li {
@@ -835,6 +842,23 @@ p {
   -webkit-box-orient: vertical;
   -webkit-line-clamp: 2;
   overflow: hidden;
+}
+
+.-toggleItem {
+  transition: 0.4s;
+  display: inline-block;
+  height: 33px;
+  border-radius: 20px;
+  border: solid 1px #7e7c83;
+  padding: 0px 15px;
+  line-height: 1.8;
+  margin-right: 10px;
+  margin-bottom: 10px;
+}
+.-toggleItem:hover {
+  color: #fefefe;
+  border-color: #C25FFF;
+  background-color: #C25FFF;
 }
 
 a {
@@ -1276,7 +1300,7 @@ a:hover {
   line-height: 1.38;
 }
 
-.m-single__title {
+.m-single__title, .m-page__title {
   font-family: "Roboto", sans-serif;
   font-weight: 500;
   font-size: 35px;
@@ -1286,7 +1310,7 @@ a:hover {
   margin-bottom: 40px;
 }
 @media only screen and (min-width: 768px) {
-  .m-single__title {
+  .m-single__title, .m-page__title {
     font-size: 58px;
   }
 }
@@ -1424,6 +1448,59 @@ a:hover {
   margin-bottom: 90px;
 }
 
+.m-page {
+  margin-top: 60px;
+}
+.m-page .-container {
+  max-width: 700px;
+}
+.m-page .m-single__img {
+  margin-bottom: 0;
+}
+@media only screen and (min-width: 768px) {
+  .m-page .m-single__img {
+    height: 360px;
+  }
+}
+
+.m-page__card {
+  background: #f3f5fa;
+  border-radius: 15px;
+}
+@media only screen and (min-width: 768px) {
+  .m-page__card {
+    padding: 32px;
+    margin-left: 32px;
+    margin-top: -64px;
+    margin-bottom: 32px;
+    width: 73%;
+  }
+}
+@media only screen and (min-width: 992px) {
+  .m-page__card {
+    width: 65%;
+  }
+}
+@media only screen and (min-width: 1200px) {
+  .m-page__card {
+    margin: -64px auto 0 0;
+  }
+}
+
+.m-page__title {
+  font-family: "Roboto", sans-serif;
+  font-weight: 600;
+  max-width: 480px;
+  margin-top: 30px;
+}
+@media only screen and (min-width: 768px) {
+  .m-page__title {
+    margin-top: 0;
+    margin-bottom: 0;
+    font-size: 40px;
+  }
+}
+
 /* ------------------------------------
  # Archive para post de cualquier Taxonomy
  -------------------------------------- */
@@ -1537,6 +1614,115 @@ a:hover {
     padding-left: 60px;
     max-width: 492px;
   }
+}
+
+/* ------------------------------------
+ # Modals ❤🔥
+ -------------------------------------- */
+.-modal {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 100;
+  display: none;
+  overflow: hidden;
+  outline: 0;
+}
+
+.m-modal {
+  position: relative;
+  width: auto;
+  margin: 7px;
+  pointer-events: none;
+  transition: transform 0.3s ease-out;
+}
+.-show .m-modal {
+  transform: translate(0, 0);
+}
+@media only screen and (min-width: 576px) {
+  .m-modal {
+    max-width: 500px;
+    margin: 30px auto;
+  }
+}
+@media only screen and (min-width: 992px) {
+  .m-modal {
+    max-width: 800px;
+  }
+}
+
+.m-modal__content {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  pointer-events: auto;
+  background-color: #fefefe;
+  background-clip: padding-box;
+  border: 1px solid rgba(70, 69, 71, 0.2);
+  border-radius: 5px;
+  outline: 0;
+}
+
+.m-modal__close {
+  border: none;
+  background: none;
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  z-index: 1;
+}
+.m-modal__close span {
+  font-size: 40px;
+}
+
+.m-modal__body {
+  position: relative;
+  flex: 1 1 auto;
+  padding: 15px;
+}
+.m-modal__body h4 {
+  font-size: 40px;
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.m-modal__tax, .m-modal__category {
+  padding: 15px;
+}
+
+.m-modal__category ul {
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-wrap: wrap;
+}
+.m-modal__category ul li {
+  flex-basis: 50%;
+  text-align: center;
+}
+.m-modal__category ul li a {
+  font-family: "Roboto", sans-serif;
+  font-weight: 500;
+  font-size: 19px;
+}
+
+.-glassDark {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  display: none;
+  opacity: 0;
+  z-index: calc(1 + 50);
+  background-color: #464547;
+  transition: 0.6s;
+}
+.-glassDark.-show {
+  opacity: 0.5;
 }
 
 /* -------------------------------------

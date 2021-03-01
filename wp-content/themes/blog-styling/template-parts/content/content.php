@@ -11,6 +11,17 @@
 
 <div class="-row">
     <div class="-col-12">
-        <div class="m-single__content"><?php the_content( ); ?></div>
+        <?php
+            if ( is_page( ) ) {
+                ?>
+                    <div class="m-page__card">
+                        <h1 class="m-page__title"><?php the_title() ?> </h1>
+                    </div>
+                    <div class="m-single__content"><?php the_content( ); ?></div>
+                <?php
+            } else {
+                echo '<div class="m-single__content">' . get_the_content( ) . '</div>';
+            }
+        ?>
     </div>
 </div>
