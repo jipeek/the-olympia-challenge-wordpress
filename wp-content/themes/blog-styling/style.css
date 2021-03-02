@@ -1159,6 +1159,11 @@ a:hover {
   overflow: hidden;
   max-height: 117px;
 }
+@media only screen and (min-width: 768px) {
+  .m-bigArticle__header {
+    padding-right: 180px;
+  }
+}
 
 .m-bigArticle__cat, .m-popularItem__cat {
   font-family: "Roboto", sans-serif;
@@ -1285,6 +1290,9 @@ a:hover {
 .m-single p {
   margin-bottom: 15px;
 }
+.m-single .-col-12 {
+  padding: 0 20px;
+}
 @media only screen and (min-width: 992px) {
   .m-single {
     margin-top: 200px;
@@ -1375,10 +1383,20 @@ a:hover {
 /* ------------------------------------
  # Wordpress content costum style
  -------------------------------------- */
+.m-single__content tr td {
+  padding-left: 10px;
+  border-right: 1px solid #dddce0;
+  border-left: 1px solid #dddce0;
+  border-bottom: 1px solid #dddce0;
+}
+.m-single__content tr:first-child td {
+  background-color: rgba(194, 95, 255, 0.3);
+  border-right: 1px solid #f3f5fa;
+}
 .m-single__content h2 {
   margin-top: 40px;
 }
-.m-single__content p, .m-single__content figcaption {
+.m-single__content p, .m-single__content figcaption, .m-single__content table {
   font-family: -apple-system, system-ui, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
   color: #464547;
   font-size: 16px;
@@ -1401,6 +1419,10 @@ a:hover {
 .m-single__content figcaption + h2, .m-single__content figcaption + h3, .m-single__content figcaption + h4 {
   margin-top: 40px !important;
 }
+.m-single__content blockquote p {
+  padding-left: 25px;
+  border-left: 2px solid #59585a;
+}
 .m-single__content h2, .m-single__content h3, .m-single__content h4 {
   font-family: "Roboto", sans-serif;
   font-weight: 500;
@@ -1410,6 +1432,21 @@ a:hover {
   margin-bottom: 20px;
   line-height: 1.3;
   max-width: 900px;
+}
+.m-single__content ul, .m-single__content ol {
+  font-family: -apple-system, system-ui, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  color: #464547;
+  font-size: 16px;
+  padding-left: 20px;
+  max-width: 790px;
+  line-height: 1.5;
+  list-style: inherit;
+  margin: 25px 0px;
+  margin-bottom: 10px;
+}
+.m-single__content ul li, .m-single__content ol li {
+  list-style-type: disc;
+  margin-bottom: 5px;
 }
 .m-single__content a {
   display: inline-flex;
@@ -1427,8 +1464,14 @@ a:hover {
   margin: 30px auto 30px auto;
 }
 @media only screen and (min-width: 768px) {
-  .m-single__content p, .m-single__content figcaption {
+  .m-single__content p, .m-single__content figcaption, .m-single__content ul, .m-single__content ol, .m-single__content table {
     font-size: 19px;
+  }
+  .m-single__content ul, .m-single__content ol {
+    padding-left: 40px;
+  }
+  .m-single__content ul li, .m-single__content ol li {
+    padding-left: 20px;
   }
   .m-single__content figcaption {
     text-align: center;
@@ -1439,7 +1482,11 @@ a:hover {
   }
 }
 @media only screen and (min-width: 992px) {
-  .m-single__content p, .m-single__content figcaption {
+  .m-single__content ul, .m-single__content ol {
+    padding-left: 120px;
+    margin-bottom: 0;
+  }
+  .m-single__content p, .m-single__content figcaption, .m-single__content table {
     margin-bottom: 20px;
   }
 }

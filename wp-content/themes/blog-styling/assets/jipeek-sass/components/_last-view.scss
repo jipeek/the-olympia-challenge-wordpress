@@ -122,6 +122,10 @@
         @include lineClamp(4);
         max-height: 117px;
     }
+
+    @include mediaQueriesMinMd {
+        padding-right: 180px
+    }
     
 }
 
