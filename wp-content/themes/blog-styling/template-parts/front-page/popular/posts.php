@@ -7,7 +7,7 @@
  */
 
 $args = array(
-    'post_type' => 'post',
+    'post_type' => ['post', 'page'],
     'posts_per_page' => 3,
     'meta_key' => 'wpb_post_views_count',
     'orderby'=>'meta_value_num', 

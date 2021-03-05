@@ -17,5 +17,5 @@
             ]);
         }
     ?>
-    <button class="m-footer__button" id="contactFooter"><span class="-medium">Jipeek E-commerce</span></button>
+    <a href="https://jipeek.com" class="m-footer__button"><span class="-medium">Jipeek E-commerce</span></a>
 </nav>

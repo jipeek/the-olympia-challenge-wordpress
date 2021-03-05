@@ -7,7 +7,7 @@
  */
 
 $args = array(
-    'post_type' => 'post',
+    'post_type' => ['post', 'page'],
     'posts_per_page' => 5,
     'order' => 'DESC',
     'orderby' => 'date'

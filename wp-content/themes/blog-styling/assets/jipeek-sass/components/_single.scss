@@ -164,8 +164,8 @@
         color: $color-black;
         font-size: $fontP;
         padding-left: $spaceRg;
-        max-width: 790px;
-        line-height: 1.5;
+        max-width: 1000px;
+        
         list-style: inherit;
         margin: $space25 0px;
         margin-bottom: $spaceXs;
@@ -173,7 +173,8 @@
 
         li {
             list-style-type: disc;
-            margin-bottom: $space0;
+            line-height: 1.75;
+            margin-bottom: $spaceXs;
         }
     }
 

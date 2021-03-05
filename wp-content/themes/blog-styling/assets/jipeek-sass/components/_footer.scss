@@ -65,16 +65,12 @@
 
 .m-footer__button {
     padding: 0;
+}
 
-    span {
-        padding: $spaceXs;
-        color: $color-primary;
-        position: relative;
-    }
-
-    &:focus {
-        outline: none;
-    }
+.m-footer__button span, .-links {
+    padding: $spaceXs;
+    color: $color-primary;
+    position: relative;
 }
 
 .m-footer__firm {
